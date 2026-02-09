@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Happy Valentine ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -14,31 +14,34 @@
     * { box-sizing: border-box; margin:0; padding:0; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #ffccd5, #ffb3c6);
       color: var(--dark);
       overflow-x: hidden;
       text-align: center;
     }
+
     header {
       height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: url('idah.jpg') no-repeat center center/cover;
       position: relative;
+      background: linear-gradient(rgba(255,192,203,0.5), rgba(255,192,203,0.5)), url('idah.jpg') no-repeat center center/cover;
       color: white;
       text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
+
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       margin-bottom: 1rem;
     }
+
     header p {
       font-size: 1.3rem;
       opacity: 0.9;
     }
+
     .heart {
       position: absolute;
       width: 20px;
@@ -57,6 +60,7 @@
     }
     .heart::before { top: -10px; left: 0; }
     .heart::after { left: -10px; top: 0; }
+
     section { padding: 4rem 1.5rem; background: var(--soft); }
     .card {
       max-width: 900px;
@@ -66,6 +70,7 @@
       padding: 3rem;
       box-shadow: 0 20px 40px rgba(0,0,0,0.15);
     }
+
     .card h2 {
       font-family: 'Playfair Display', serif;
       color: var(--pink);
@@ -73,6 +78,7 @@
       margin-bottom: 1rem;
     }
     .card p { font-size:1.1rem; line-height:1.8; }
+
     .btn {
       display: inline-block;
       margin-top: 2rem;
@@ -89,6 +95,7 @@
       transform: translateY(-4px);
       box-shadow:0 10px 20px rgba(0,0,0,0.2);
     }
+
     @keyframes float {
       0% { transform: translateY(0) rotate(45deg); opacity:0; }
       50% { opacity:1; }
@@ -106,7 +113,7 @@
   <section>
     <div class="card">
       <h2>To My Valentine, Idah</h2>
-      <p>Every heartbeat of mine carries your name. This little website is a reminder of how special you are, how deeply you are loved, and how grateful I am to have you in my life. I can’t wait to celebrate Valentine’s Day with you, just 5 days to go!</p>
+      <p>Every heartbeat of mine carries your name. This little website is a reminder of how special you are, how deeply you are loved, and how grateful I am to have you in my life. Just 5 days to go until Valentine’s!</p>
 
       <div style="margin-top:2rem;">
         <p id="question" style="font-weight:600; font-size:1.2rem;">Will you be my Valentine? 💘</p>
@@ -133,44 +140,34 @@
   </section>
 
   <script>
+    // Floating hearts
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
-      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.left = Math.random()*100+'vw';
       heart.style.animationDuration = (Math.random()*5+5)+'s';
       document.body.appendChild(heart);
       setTimeout(()=>heart.remove(),9000);
     }
     setInterval(createHeart,400);
 
+    // AJAX FormSubmit (no redirect)
     function sayYes() {
       document.getElementById('question').innerText = 'She said YES! 💍❤️';
       document.getElementById('loveContent').style.display = 'block';
 
-      const form = document.createElement('form');
-      form.action = 'https://formsubmit.co/twizamungomba@gmail.com';
-      form.method = 'POST';
-
-      const message = document.createElement('input');
-      message.type = 'hidden';
-      message.name = 'message';
-      message.value = 'She said YES 💖 on your Valentine website!';
-
-      const subject = document.createElement('input');
-      subject.type = 'hidden';
-      subject.name = '_subject';
-      subject.value = 'Valentine Answer 💖';
-
-      const captcha = document.createElement('input');
-      captcha.type = 'hidden';
-      captcha.name = '_captcha';
-      captcha.value = 'false';
-
-      form.appendChild(message);
-      form.appendChild(subject);
-      form.appendChild(captcha);
-      document.body.appendChild(form);
-      form.submit();
+      fetch('https://formsubmit.co/ajax/twizamungomba@gmail.com', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify({
+          message: 'She said YES 💖 on your Valentine website!',
+          _subject: 'Valentine Answer 💖',
+          _captcha: 'false'
+        })
+      })
+      .then(res => res.json())
+      .then(data => console.log('Email sent!', data))
+      .catch(err => console.error('Email error:', err));
     }
 
     function sayNo() {
