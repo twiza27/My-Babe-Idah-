@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Valentine ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -151,14 +151,17 @@
     }
     setInterval(createHeart,400);
 
-    // AJAX FormSubmit (no redirect)
+    // AJAX FormSubmit (silent, no redirect)
     function sayYes() {
       document.getElementById('question').innerText = 'She said YES! 💍❤️';
       document.getElementById('loveContent').style.display = 'block';
 
       fetch('https://formsubmit.co/ajax/twizamungomba@gmail.com', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        headers: { 
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
         body: JSON.stringify({
           message: 'She said YES 💖 on your Valentine website!',
           _subject: 'Valentine Answer 💖',
