@@ -1,149 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Be My Valentine 💖</title>
-
-<style>
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(-45deg, #ff758c, #ff7eb3, #ff4d6d, #ffc3a0);
-  background-size: 400% 400%;
-  animation: bg 12s ease infinite;
-}
-
-@keyframes bg {
-  0% {background-position: 0% 50%;}
-  50% {background-position: 100% 50%;}
-  100% {background-position: 0% 50%;}
-}
-
-.card {
-  background: white;
-  padding: 30px;
-  border-radius: 20px;
-  text-align: center;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-  z-index: 10;
-}
-
-h1 { color: #e91e63; }
-
-button {
-  padding: 12px 25px;
-  margin: 10px;
-  border: none;
-  border-radius: 30px;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-.yes {
-  background: #e91e63;
-  color: white;
-}
-
-.no {
-  background: #555;
-  color: white;
-  position: relative;
-}
-
-/* Floating hearts */
-.heart {
-  position: fixed;
-  bottom: -20px;
-  font-size: 20px;
-  animation: float 6s linear infinite;
-}
-
-@keyframes float {
-  0% { transform: translateY(0); opacity: 1; }
-  100% { transform: translateY(-120vh); opacity: 0; }
-}
-
-/* Heart explosion */
-@keyframes rise {
-  to {
-    transform: translateY(-120vh);
-    opacity: 0;
-  }
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Valentine ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --pink: #ff4d6d;
+      --dark: #2b2b2b;
+      --soft: #fff0f3;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(120deg, #ff758f, #ffb3c6);
+      color: var(--dark);
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: white;
+      animation: fadeIn 2s ease-in-out;
+    }
+    header p {
+      margin-top: 1rem;
+      font-size: 1.2rem;
+      color: #fff;
+      opacity: 0.9;
+    }
+    .heart {
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: var(--pink);
+      transform: rotate(45deg);
+      animation: float 8s infinite ease-in-out;
+    }
+    .heart::before, .heart::after {
+      content: '';
+      width: 20px;
+      height: 20px;
+      background: var(--pink);
+      border-radius: 50%;
+      position: absolute;
+    }
+    .heart::before { top: -10px; left: 0; }
+    .heart::after { left: -10px; top: 0; }
+    section { padding: 4rem 1.5rem; background: var(--soft); }
+    .card {
+      max-width: 900px;
+      margin: auto;
+      background: white;
+      border-radius: 20px;
+      padding: 3rem;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    .card h2 {
+      font-family: 'Playfair Display', serif;
+      color: var(--pink);
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      text-align: center;
+    }
+    .btn {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.9rem 2.5rem;
+      background: var(--pink);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: pointer;
+    }
+    .btn:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+    }
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #fff;
+      font-size: 0.9rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0) rotate(45deg); opacity: 0; }
+      50% { opacity: 1; }
+      100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+    }
+  </style>
 </head>
-
 <body>
+  <header>
+    <div>
+      <h1>Happy Valentine’s Day ❤️</h1>
+      <p>You are my today and all of my tomorrows</p>
+    </div>
+  </header>  <section>
+    <div class="card">
+      <h2>To My Valentine</h2>
+      <p>Every heartbeat of mine carries your name. This little website is a reminder of how special you are, how deeply you are loved, and how grateful I am to have you in my life.</p><div style="text-align:center; margin-top:2rem;">
+    <p id="question" style="font-weight:600; font-size:1.2rem;">Will you be my Valentine? 💘</p>
+    <button class="btn" onclick="sayYes()">Yes 💖</button>
+    <button class="btn" style="background:#555; margin-left:1rem;" onclick="sayNo()">No 🙈</button>
+  </div>
 
-<audio id="music" loop>
-  <source src="ordinary.mp3" type="audio/mpeg">
-</audio>
+  <div id="loveContent" style="display:none; margin-top:3rem; text-align:center;">
+    <h3 style="color:#ff4d6d; font-family:'Playfair Display', serif; font-size:2rem;">A Letter From My Heart 💌</h3>
+    <p style="margin-top:1.5rem; font-size:1.1rem; line-height:1.8;">From the moment you came into my life, everything changed in the most beautiful way. Your smile calms my storms, your voice feels like home, and your love is the greatest gift I never knew I needed. Saying yes means choosing us — today, tomorrow, and always.</p>
 
-<div class="card">
-  <h1>💘 Valentine 💘</h1>
-  <p><strong>Idah Sekelani Mbewe</strong>,<br>
-  will you be my Valentine? 💕</p>
-
-  <form action="https://formsubmit.co/twizamungomba@gmail.com" method="POST">
-    <button class="yes" type="submit" name="Answer" value="YES ❤️" onclick="yesClick()">Yes ❤️</button>
-    <button class="no" type="button" id="noBtn">No 💔</button>
-
-    <input type="hidden" name="_subject" value="Valentine Response 💌">
-    <input type="hidden" name="_captcha" value="false">
-  </form>
-
-  <p id="secret" style="display:none;color:#e91e63;margin-top:15px;">
-    💞 You just made my heart very happy 💞
-  </p>
+    <div style="margin-top:2rem;">
+      <video width="100%" style="max-width:600px; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.2);" controls>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+      </video>
+      <p style="font-size:0.9rem; margin-top:0.5rem; opacity:0.7;">(Your special video ❤️)</p>
+    </div>
+  </div>
 </div>
 
-<script>
-// Floating hearts
-setInterval(() => {
-  let h = document.createElement("div");
-  h.className = "heart";
-  h.innerHTML = "💖";
-  h.style.left = Math.random()*100 + "vw";
-  h.style.animationDuration = (4 + Math.random()*4) + "s";
-  document.body.appendChild(h);
-  setTimeout(() => h.remove(), 6000);
-}, 300);
+  </section>  <footer>
+    Made with ❤️ just for you
+  </footer>  <script>
+    // Floating hearts
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.classList.add('heart');
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 9000);
+    }
+    setInterval(createHeart, 400);
 
-// NO button runs away
-const noBtn = document.getElementById("noBtn");
-noBtn.addEventListener("mouseenter", () => {
-  noBtn.style.position = "fixed";
-  noBtn.style.left = Math.random()*90 + "vw";
-  noBtn.style.top = Math.random()*90 + "vh";
-});
+    function sayYes() {
+      document.getElementById('question').innerText = 'She said YES! 💍❤️';
+      document.getElementById('loveContent').style.display = 'block';
 
-// YES click
-function yesClick(){
-  document.getElementById("music").play();
-  document.getElementById("secret").style.display = "block";
+      // FormSubmit to your email
+      const form = document.createElement('form');
+      form.action = 'https://formsubmit.co/twizamungomba@gmail.com';
+      form.method = 'POST';
 
-  for(let i=0;i<40;i++){
-    let e = document.createElement("div");
-    e.innerHTML = "💖";
-    e.style.position = "fixed";
-    e.style.left = Math.random()*100 + "vw";
-    e.style.bottom = "0";
-    e.style.fontSize = "24px";
-    e.style.animation = "rise 3s ease-out forwards";
-    document.body.appendChild(e);
-    setTimeout(() => e.remove(), 3000);
-  }
+      const message = document.createElement('input');
+      message.type = 'hidden';
+      message.name = 'message';
+      message.value = 'She said YES 💖 on your Valentine website!';
 
-  if(navigator.vibrate){
-    navigator.vibrate([200,100,200]);
-  }
-}
-</script>
+      const subject = document.createElement('input');
+      subject.type = 'hidden';
+      subject.name = '_subject';
+      subject.value = 'Valentine Answer 💖';
 
-</body>
+      const captcha = document.createElement('input');
+      captcha.type = 'hidden';
+      captcha.name = '_captcha';
+      captcha.value = 'false';
+
+      form.appendChild(message);
+      form.appendChild(subject);
+      form.appendChild(captcha);
+      document.body.appendChild(form);
+      form.submit();
+    }
+
+    function sayNo() {
+      alert('Are you sure? My heart says try again 😅💔');
+    }
+  </script></body>
 </html>
