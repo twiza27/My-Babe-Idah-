@@ -1,7 +1,8 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Valentine ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
   <style>
@@ -10,31 +11,32 @@
       --dark: #2b2b2b;
       --soft: #fff0f3;
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * { box-sizing: border-box; margin:0; padding:0; }
     body {
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(120deg, #ff758f, #ffb3c6);
+      background: linear-gradient(135deg, #ffccd5, #ffb3c6);
       color: var(--dark);
       overflow-x: hidden;
+      text-align: center;
     }
     header {
       height: 100vh;
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
-      text-align: center;
+      background: url('idah.jpg') no-repeat center center/cover;
       position: relative;
+      color: white;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.5);
     }
     header h1 {
       font-family: 'Playfair Display', serif;
       font-size: clamp(2.5rem, 6vw, 4.5rem);
-      color: white;
-      animation: fadeIn 2s ease-in-out;
+      margin-bottom: 1rem;
     }
     header p {
-      margin-top: 1rem;
-      font-size: 1.2rem;
-      color: #fff;
+      font-size: 1.3rem;
       opacity: 0.9;
     }
     .heart {
@@ -69,94 +71,82 @@
       color: var(--pink);
       font-size: 2.5rem;
       margin-bottom: 1rem;
-      text-align: center;
     }
-    .card p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-      text-align: center;
-    }
+    .card p { font-size:1.1rem; line-height:1.8; }
     .btn {
       display: inline-block;
       margin-top: 2rem;
       padding: 0.9rem 2.5rem;
       background: var(--pink);
-      color: white;
-      border-radius: 50px;
-      text-decoration: none;
-      font-weight: 600;
+      color:white;
+      border-radius:50px;
+      text-decoration:none;
+      font-weight:600;
       transition: transform 0.3s, box-shadow 0.3s;
-      cursor: pointer;
+      cursor:pointer;
     }
     .btn:hover {
       transform: translateY(-4px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-    }
-    footer {
-      text-align: center;
-      padding: 2rem;
-      background: #fff;
-      font-size: 0.9rem;
-    }
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
+      box-shadow:0 10px 20px rgba(0,0,0,0.2);
     }
     @keyframes float {
-      0% { transform: translateY(0) rotate(45deg); opacity: 0; }
-      50% { opacity: 1; }
-      100% { transform: translateY(-120vh) rotate(45deg); opacity: 0; }
+      0% { transform: translateY(0) rotate(45deg); opacity:0; }
+      50% { opacity:1; }
+      100% { transform: translateY(-120vh) rotate(45deg); opacity:0; }
     }
   </style>
 </head>
 <body>
+
   <header>
-    <div>
-      <h1>Happy Valentine’s Day ❤️</h1>
-      <p>You are my today and all of my tomorrows</p>
-    </div>
-  </header>  <section>
+    <h1>Happy Valentine’s Day, Idah ❤️</h1>
+    <p>My dearest Idah Sekelani Mbewe, you are my today and all of my tomorrows</p>
+  </header>
+
+  <section>
     <div class="card">
-      <h2>To My Valentine</h2>
-      <p>Every heartbeat of mine carries your name. This little website is a reminder of how special you are, how deeply you are loved, and how grateful I am to have you in my life.</p><div style="text-align:center; margin-top:2rem;">
-    <p id="question" style="font-weight:600; font-size:1.2rem;">Will you be my Valentine? 💘</p>
-    <button class="btn" onclick="sayYes()">Yes 💖</button>
-    <button class="btn" style="background:#555; margin-left:1rem;" onclick="sayNo()">No 🙈</button>
-  </div>
+      <h2>To My Valentine, Idah</h2>
+      <p>Every heartbeat of mine carries your name. This little website is a reminder of how special you are, how deeply you are loved, and how grateful I am to have you in my life. I can’t wait to celebrate Valentine’s Day with you, just 5 days to go!</p>
 
-  <div id="loveContent" style="display:none; margin-top:3rem; text-align:center;">
-    <h3 style="color:#ff4d6d; font-family:'Playfair Display', serif; font-size:2rem;">A Letter From My Heart 💌</h3>
-    <p style="margin-top:1.5rem; font-size:1.1rem; line-height:1.8;">From the moment you came into my life, everything changed in the most beautiful way. Your smile calms my storms, your voice feels like home, and your love is the greatest gift I never knew I needed. Saying yes means choosing us — today, tomorrow, and always.</p>
+      <div style="margin-top:2rem;">
+        <p id="question" style="font-weight:600; font-size:1.2rem;">Will you be my Valentine? 💘</p>
+        <button class="btn" onclick="sayYes()">Yes 💖</button>
+        <button class="btn" style="background:#555; margin-left:1rem;" onclick="sayNo()">No 🙈</button>
+      </div>
 
-    <div style="margin-top:2rem;">
-      <video width="100%" style="max-width:600px; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.2);" controls>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-      </video>
-      <p style="font-size:0.9rem; margin-top:0.5rem; opacity:0.7;">(Your special video ❤️)</p>
+      <div id="loveContent" style="display:none; margin-top:3rem;">
+        <h3 style="color:#ff4d6d; font-family:'Playfair Display', serif; font-size:2rem;">A Letter From My Heart 💌</h3>
+        <p style="margin-top:1.5rem; font-size:1.1rem; line-height:1.8;">
+          From the moment you came into my life, everything changed in the most beautiful way.
+          Your smile calms my storms, your voice feels like home, and your love is the greatest gift I never knew I needed. Saying yes means choosing us — today, tomorrow, and always.
+        </p>
+
+        <div style="margin-top:2rem;">
+          <video width="100%" style="max-width:600px; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.2);" controls>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+          <p style="font-size:0.9rem; margin-top:0.5rem; opacity:0.7;">(Your special video ❤️)</p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
+  </section>
 
-  </section>  <footer>
-    Made with ❤️ just for you
-  </footer>  <script>
-    // Floating hearts
+  <script>
     function createHeart() {
       const heart = document.createElement('div');
       heart.classList.add('heart');
       heart.style.left = Math.random() * 100 + 'vw';
-      heart.style.animationDuration = (Math.random() * 5 + 5) + 's';
+      heart.style.animationDuration = (Math.random()*5+5)+'s';
       document.body.appendChild(heart);
-      setTimeout(() => heart.remove(), 9000);
+      setTimeout(()=>heart.remove(),9000);
     }
-    setInterval(createHeart, 400);
+    setInterval(createHeart,400);
 
     function sayYes() {
       document.getElementById('question').innerText = 'She said YES! 💍❤️';
       document.getElementById('loveContent').style.display = 'block';
 
-      // FormSubmit to your email
       const form = document.createElement('form');
       form.action = 'https://formsubmit.co/twizamungomba@gmail.com';
       form.method = 'POST';
@@ -186,5 +176,6 @@
     function sayNo() {
       alert('Are you sure? My heart says try again 😅💔');
     }
-  </script></body>
+  </script>
+</body>
 </html>
