@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Something for You ❤️</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Something Special ❤️</title>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
   <style>
@@ -29,15 +28,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      position: relative;
       background: linear-gradient(rgba(255,192,203,0.5), rgba(255,192,203,0.5)), url('her_smile.jpg') no-repeat center center/cover;
       color: white;
       text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-      position: relative;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4rem);
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
       margin-bottom: 1rem;
     }
 
@@ -84,7 +83,7 @@
     .card h2 {
       font-family: 'Playfair Display', serif;
       color: var(--pink);
-      font-size: 2.3rem;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
 
@@ -100,7 +99,7 @@
       background: var(--pink);
       color:white;
       border-radius:50px;
-      border: none;
+      text-decoration:none;
       font-weight:600;
       cursor:pointer;
       transition: 0.3s;
@@ -129,7 +128,7 @@
 
 <header>
   <h1>Hey Idah Sekelani Nyangu Mbewe ❤️</h1>
-  <p>There’s something I’ve been meaning to ask you… something real.</p>
+  <p>There’s something I’ve been meaning to ask you…</p>
 </header>
 
 <section>
@@ -139,31 +138,30 @@
     <p>
       Getting to know you has been one of the best things in my life.  
       The way you smile, the way you talk, the way you understand me… it all just feels right.  
-      And honestly, I don’t want this to just be something casual.
+      And honestly, I don’t want this to just stay as something casual anymore.
     </p>
 
     <div style="margin-top:2rem;">
-      <p id="question" style="font-weight:600; font-size:1.3rem;">
+      <p id="question" style="font-weight:600; font-size:1.2rem;">
         Will you be my girlfriend? ❤️
       </p>
 
       <button class="btn" onclick="sayYes()">Yes 💖</button>
-      <button id="noBtn" class="btn" onmouseover="moveButton()">No 🙈</button>
+      <button class="btn" style="background:#555; margin-left:1rem;" onclick="sayNo()">No 🙈</button>
     </div>
 
     <div id="loveContent" style="display:none; margin-top:3rem;">
       <h3 style="color:#ff4d6d; font-family:'Playfair Display', serif; font-size:2rem;">
-        You just made me the happiest guy ❤️
+        You just made me the happiest person ❤️
       </h3>
 
       <p style="margin-top:1.5rem;">
-        I promise to treat you right, to respect you, to make you smile,  
-        and to be someone you can always feel safe with.  
-        This is just the beginning of something beautiful… us. 💖
+        I promise to respect you, care for you, and always choose you the right way.  
+        This is me being real with my feelings for you. 💖
       </p>
 
       <div style="margin-top:2rem;">
-        <video id="loveVideo" width="100%" style="max-width:600px; border-radius:20px;" controls>
+        <video width="100%" style="max-width:600px; border-radius:20px;" controls>
           <source src="our_memory.mp4" type="video/mp4">
         </video>
         <p style="font-size:0.9rem; opacity:0.7;">(Our memory ❤️)</p>
@@ -187,7 +185,12 @@
   function sayYes() {
     document.getElementById('question').innerText = 'She said YES 😭❤️';
     document.getElementById('loveContent').style.display = 'block';
+  }
 
-    document.getElementById('loveVideo').play();
+  function sayNo() {
+    alert('It’s okay… I just wanted to be honest with you ❤️');
+  }
+</script>
 
-    fetch('https://formsubmit.co/ajax
+</body>
+</html>
