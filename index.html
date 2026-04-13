@@ -29,7 +29,7 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      background: linear-gradient(rgba(255,192,203,0.5), rgba(255,192,203,0.5)), url('idah.jpg') no-repeat center center/cover;
+      background: linear-gradient(rgba(255,192,203,0.5), rgba(255,192,203,0.5)), url('her_smile.jpg') no-repeat center center/cover;
       color: white;
       text-shadow: 0 2px 8px rgba(0,0,0,0.5);
       position: relative;
@@ -134,7 +134,7 @@
 
 <section>
   <div class="card">
-    <h2>To Idah Sekelani Nyangu Mbewe</h2>
+    <h2>To You ❤️</h2>
 
     <p>
       Getting to know you has been one of the best things in my life.  
@@ -144,7 +144,7 @@
 
     <div style="margin-top:2rem;">
       <p id="question" style="font-weight:600; font-size:1.3rem;">
-        Idah Sekelani Nyangu Mbewe… will you be my girlfriend? ❤️
+        Will you be my girlfriend? ❤️
       </p>
 
       <button class="btn" onclick="sayYes()">Yes 💖</button>
@@ -163,10 +163,10 @@
       </p>
 
       <div style="margin-top:2rem;">
-        <video width="100%" style="max-width:600px; border-radius:20px;" controls>
-          <source src="video.mp4" type="video/mp4">
+        <video id="loveVideo" width="100%" style="max-width:600px; border-radius:20px;" controls>
+          <source src="our_memory.mp4" type="video/mp4">
         </video>
-        <p style="font-size:0.9rem; opacity:0.7;">(Our moment ❤️)</p>
+        <p style="font-size:0.9rem; opacity:0.7;">(Our memory ❤️)</p>
       </div>
     </div>
 
@@ -188,28 +188,6 @@
     document.getElementById('question').innerText = 'She said YES 😭❤️';
     document.getElementById('loveContent').style.display = 'block';
 
-    fetch('https://formsubmit.co/ajax/twizamungomba@gmail.com', {
-      method: 'POST',
-      headers: { 
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        message: 'She said YES 💖 to being your girlfriend!',
-        _subject: 'She said YES ❤️',
-        _captcha: 'false'
-      })
-    });
-  }
+    document.getElementById('loveVideo').play();
 
-  function moveButton() {
-    const btn = document.getElementById('noBtn');
-    const x = Math.random() * (window.innerWidth - 100);
-    const y = Math.random() * (window.innerHeight - 50);
-    btn.style.left = x + 'px';
-    btn.style.top = y + 'px';
-  }
-</script>
-
-</body>
-</html>
+    fetch('https://formsubmit.co/ajax
