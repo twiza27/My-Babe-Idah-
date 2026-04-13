@@ -2,16 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Happy Valentine ❤️</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Something for You ❤️</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --pink: #ff4d6d;
       --dark: #2b2b2b;
       --soft: #fff0f3;
     }
+
     * { box-sizing: border-box; margin:0; padding:0; }
+
     body {
       font-family: 'Poppins', sans-serif;
       color: var(--dark);
@@ -25,15 +29,15 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      position: relative;
       background: linear-gradient(rgba(255,192,203,0.5), rgba(255,192,203,0.5)), url('idah.jpg') no-repeat center center/cover;
       color: white;
       text-shadow: 0 2px 8px rgba(0,0,0,0.5);
+      position: relative;
     }
 
     header h1 {
       font-family: 'Playfair Display', serif;
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size: clamp(2.5rem, 6vw, 4rem);
       margin-bottom: 1rem;
     }
 
@@ -50,6 +54,7 @@
       transform: rotate(45deg);
       animation: float 8s infinite ease-in-out;
     }
+
     .heart::before, .heart::after {
       content: '';
       width: 20px;
@@ -58,10 +63,15 @@
       border-radius: 50%;
       position: absolute;
     }
+
     .heart::before { top: -10px; left: 0; }
     .heart::after { left: -10px; top: 0; }
 
-    section { padding: 4rem 1.5rem; background: var(--soft); }
+    section {
+      padding: 4rem 1.5rem;
+      background: var(--soft);
+    }
+
     .card {
       max-width: 900px;
       margin: auto;
@@ -74,10 +84,14 @@
     .card h2 {
       font-family: 'Playfair Display', serif;
       color: var(--pink);
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       margin-bottom: 1rem;
     }
-    .card p { font-size:1.1rem; line-height:1.8; }
+
+    .card p {
+      font-size: 1.1rem;
+      line-height: 1.8;
+    }
 
     .btn {
       display: inline-block;
@@ -86,14 +100,21 @@
       background: var(--pink);
       color:white;
       border-radius:50px;
-      text-decoration:none;
+      border: none;
       font-weight:600;
-      transition: transform 0.3s, box-shadow 0.3s;
       cursor:pointer;
+      transition: 0.3s;
     }
+
     .btn:hover {
       transform: translateY(-4px);
       box-shadow:0 10px 20px rgba(0,0,0,0.2);
+    }
+
+    #noBtn {
+      background:#555;
+      margin-left:1rem;
+      position:absolute;
     }
 
     @keyframes float {
@@ -103,79 +124,92 @@
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <h1>Happy Valentine’s Day, Idah ❤️</h1>
-    <p>My dearest Idah Sekelani Mbewe, you are my today and all of my tomorrows</p>
-  </header>
+<header>
+  <h1>Hey Idah Sekelani Nyangu Mbewe ❤️</h1>
+  <p>There’s something I’ve been meaning to ask you… something real.</p>
+</header>
 
-  <section>
-    <div class="card">
-      <h2>To My Valentine, Idah</h2>
-      <p>Every heartbeat of mine carries your name. This little website is a reminder of how special you are, how deeply you are loved, and how grateful I am to have you in my life. Just 5 days to go until Valentine’s!</p>
+<section>
+  <div class="card">
+    <h2>To Idah Sekelani Nyangu Mbewe</h2>
+
+    <p>
+      Getting to know you has been one of the best things in my life.  
+      The way you smile, the way you talk, the way you understand me… it all just feels right.  
+      And honestly, I don’t want this to just be something casual.
+    </p>
+
+    <div style="margin-top:2rem;">
+      <p id="question" style="font-weight:600; font-size:1.3rem;">
+        Idah Sekelani Nyangu Mbewe… will you be my girlfriend? ❤️
+      </p>
+
+      <button class="btn" onclick="sayYes()">Yes 💖</button>
+      <button id="noBtn" class="btn" onmouseover="moveButton()">No 🙈</button>
+    </div>
+
+    <div id="loveContent" style="display:none; margin-top:3rem;">
+      <h3 style="color:#ff4d6d; font-family:'Playfair Display', serif; font-size:2rem;">
+        You just made me the happiest guy ❤️
+      </h3>
+
+      <p style="margin-top:1.5rem;">
+        I promise to treat you right, to respect you, to make you smile,  
+        and to be someone you can always feel safe with.  
+        This is just the beginning of something beautiful… us. 💖
+      </p>
 
       <div style="margin-top:2rem;">
-        <p id="question" style="font-weight:600; font-size:1.2rem;">Will you be my Valentine? 💘</p>
-        <button class="btn" onclick="sayYes()">Yes 💖</button>
-        <button class="btn" style="background:#555; margin-left:1rem;" onclick="sayNo()">No 🙈</button>
-      </div>
-
-      <div id="loveContent" style="display:none; margin-top:3rem;">
-        <h3 style="color:#ff4d6d; font-family:'Playfair Display', serif; font-size:2rem;">A Letter From My Heart 💌</h3>
-        <p style="margin-top:1.5rem; font-size:1.1rem; line-height:1.8;">
-          From the moment you came into my life, everything changed in the most beautiful way.
-          Your smile calms my storms, your voice feels like home, and your love is the greatest gift I never knew I needed. Saying yes means choosing us — today, tomorrow, and always.
-        </p>
-
-        <div style="margin-top:2rem;">
-          <video width="100%" style="max-width:600px; border-radius:20px; box-shadow:0 15px 30px rgba(0,0,0,0.2);" controls>
-            <source src="video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-          <p style="font-size:0.9rem; margin-top:0.5rem; opacity:0.7;">(Your special video ❤️)</p>
-        </div>
+        <video width="100%" style="max-width:600px; border-radius:20px;" controls>
+          <source src="video.mp4" type="video/mp4">
+        </video>
+        <p style="font-size:0.9rem; opacity:0.7;">(Our moment ❤️)</p>
       </div>
     </div>
-  </section>
 
-  <script>
-    // Floating hearts
-    function createHeart() {
-      const heart = document.createElement('div');
-      heart.classList.add('heart');
-      heart.style.left = Math.random()*100+'vw';
-      heart.style.animationDuration = (Math.random()*5+5)+'s';
-      document.body.appendChild(heart);
-      setTimeout(()=>heart.remove(),9000);
-    }
-    setInterval(createHeart,400);
+  </div>
+</section>
 
-    // AJAX FormSubmit (silent, no redirect)
-    function sayYes() {
-      document.getElementById('question').innerText = 'She said YES! 💍❤️';
-      document.getElementById('loveContent').style.display = 'block';
+<script>
+  function createHeart() {
+    const heart = document.createElement('div');
+    heart.classList.add('heart');
+    heart.style.left = Math.random()*100+'vw';
+    heart.style.animationDuration = (Math.random()*5+5)+'s';
+    document.body.appendChild(heart);
+    setTimeout(()=>heart.remove(),9000);
+  }
+  setInterval(createHeart,400);
 
-      fetch('https://formsubmit.co/ajax/twizamungomba@gmail.com', {
-        method: 'POST',
-        headers: { 
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          message: 'She said YES 💖 on your Valentine website!',
-          _subject: 'Valentine Answer 💖',
-          _captcha: 'false'
-        })
+  function sayYes() {
+    document.getElementById('question').innerText = 'She said YES 😭❤️';
+    document.getElementById('loveContent').style.display = 'block';
+
+    fetch('https://formsubmit.co/ajax/twizamungomba@gmail.com', {
+      method: 'POST',
+      headers: { 
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        message: 'She said YES 💖 to being your girlfriend!',
+        _subject: 'She said YES ❤️',
+        _captcha: 'false'
       })
-      .then(res => res.json())
-      .then(data => console.log('Email sent!', data))
-      .catch(err => console.error('Email error:', err));
-    }
+    });
+  }
 
-    function sayNo() {
-      alert('Are you sure? My heart says try again 😅💔');
-    }
-  </script>
+  function moveButton() {
+    const btn = document.getElementById('noBtn');
+    const x = Math.random() * (window.innerWidth - 100);
+    const y = Math.random() * (window.innerHeight - 50);
+    btn.style.left = x + 'px';
+    btn.style.top = y + 'px';
+  }
+</script>
+
 </body>
 </html>
