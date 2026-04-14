@@ -87,11 +87,6 @@
       margin-bottom: 1rem;
     }
 
-    .card p {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-
     .btn {
       display: inline-block;
       margin-top: 2rem;
@@ -99,7 +94,7 @@
       background: var(--pink);
       color:white;
       border-radius:50px;
-      text-decoration:none;
+      border:none;
       font-weight:600;
       cursor:pointer;
       transition: 0.3s;
@@ -108,12 +103,6 @@
     .btn:hover {
       transform: translateY(-4px);
       box-shadow:0 10px 20px rgba(0,0,0,0.2);
-    }
-
-    #noBtn {
-      background:#555;
-      margin-left:1rem;
-      position:absolute;
     }
 
     @keyframes float {
@@ -135,33 +124,61 @@
   <div class="card">
     <h2>To You ❤️</h2>
 
-    <p>
-      Getting to know you has been one of the best things in my life.  
-      The way you smile, the way you talk, the way you understand me… it all just feels right.  
-      And honestly, I don’t want this to just stay as something casual anymore.
-    </p>
+    <!-- READ ME -->
+    <div style="text-align:left; font-size:1.05rem; line-height:1.9; margin-top:1rem;">
 
+      <p>Hey Idah Sekelani Nyangu Mbewe ❤️</p>
+
+      <p style="margin-top:1rem;">
+      I’ve been thinking about this for a while… and I didn’t want to rush it, because you’re not someone I take lightly 😊
+      </p>
+
+      <p style="margin-top:1rem;">
+      From the moment we started talking, something about you felt different. Not just in a small way… but in a way that made me pay attention, in a way that made me want to know you more, understand you more, and be around you more 🥺
+      </p>
+
+      <p style="margin-top:1rem;">
+      The way you smile… the way you speak… the way you carry yourself… it all feels so natural and real to me. Being around you feels peaceful 💖
+      </p>
+
+      <p style="margin-top:1rem;">
+      And honestly, I’ve realized something… I don’t want this to just be a “moment” or something temporary. I want something real with you ❤️
+      </p>
+
+      <p style="margin-top:1rem;">
+      I want to be the person who makes you smile on your worst days 😊  
+      The one who stands by you, respects you, and treats you the way you truly deserve 💯❤️  
+      The one who chooses you, not just now… but consistently.
+      </p>
+
+      <p style="margin-top:1rem;">
+      This isn’t just me asking a question… it’s me being real about how I feel about you 🥹
+      </p>
+
+      <p style="margin-top:1rem; font-weight:600;">
+      So Idah Sekelani Nyangu Mbewe… ❤️
+      </p>
+
+    </div>
+
+    <!-- QUESTION -->
     <div style="margin-top:2rem;">
-      <p id="question" style="font-weight:600; font-size:1.2rem;">
-        Will you be my girlfriend? ❤️
+      <p id="question" style="font-weight:600; font-size:1.3rem;">
+        Will you be my girlfriend? 💍❤️🥺
       </p>
 
       <button class="btn" onclick="sayYes()">Yes 💖</button>
       <button class="btn" style="background:#555; margin-left:1rem;" onclick="sayNo()">No 🙈</button>
     </div>
 
+    <!-- VIDEO AFTER YES -->
     <div id="loveContent" style="display:none; margin-top:3rem;">
       <h3 style="color:#ff4d6d; font-family:'Playfair Display', serif; font-size:2rem;">
         You just made me the happiest person ❤️
       </h3>
 
-      <p style="margin-top:1.5rem;">
-        I promise to respect you, care for you, and always choose you the right way.  
-        This is me being real with my feelings for you. 💖
-      </p>
-
       <div style="margin-top:2rem;">
-        <video width="100%" style="max-width:600px; border-radius:20px;" controls>
+        <video id="loveVideo" width="100%" style="max-width:600px; border-radius:20px;" controls>
           <source src="our_memory.mp4" type="video/mp4">
         </video>
         <p style="font-size:0.9rem; opacity:0.7;">(Our memory ❤️)</p>
@@ -185,6 +202,10 @@
   function sayYes() {
     document.getElementById('question').innerText = 'She said YES 😭❤️';
     document.getElementById('loveContent').style.display = 'block';
+
+    const video = document.getElementById('loveVideo');
+    video.muted = false;
+    video.play();
   }
 
   function sayNo() {
